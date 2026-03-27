@@ -1,7 +1,11 @@
 import sys
 import os
 import time
+import random
+
+from matplotlib.style import available
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+
 
 # Add the database folder to sys.path
 sys.path.append(project_root)
@@ -14,6 +18,23 @@ class PlateGetter:
         self.max_age = max_age_minutes
         self.min_len = min_len
         self.max_len = max_len
+
+
+    def check_dummy_availability(self, plates):
+        available = []
+        not_available = []
+
+
+        for plate in plates:
+            if len(plate) < self.min_len or len(plate) > self.max_len:
+                continue  # Skip plates that don't meet length requirements
+
+            if random.random() < 0.3:  # Simulate 30% availability
+                available.append(plate)
+            else:
+                not_available.append(plate)
+
+        return available, not_available
 
     def check_plate_availability(self, plates):
         available = []
