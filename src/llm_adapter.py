@@ -35,11 +35,12 @@ class PlateFinder:
                        f"user input: f{prompt}" 
                        f"\nThe rarity index is {str(rarity)} out of 10. 1 meaning be super creative, all common words are already taken and 10 being a lot of vanity plates are still available ONLY go for common words that look very clean and look amazing or are short. Avoid mixing numbers and letters for higher rarities as this is considered unclean."
                        f"\nThe length of the vanity plate should be between {str(min_len)} and {str(max_len)} characters."
+                       f"\n Generate {amount_of_ideas} ideas and return them as a comma-separated list."
                        f"\n following plates have been checked: {checked}, find different plates"
         )
         
         model_config = types.GenerateContentConfig(
-                        max_output_tokens=amount_of_ideas * 100,  
+                        max_output_tokens=amount_of_ideas * 10,  
                         temperature=0.8,
                     )
         start_time = time.perf_counter()
