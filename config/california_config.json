@@ -1,0 +1,10 @@
+{
+    "plate_checker": {
+        "min_len_state": 2,
+        "max_len_state": 7,
+        "starting_rarity": 7,
+        "max_amount_plates": 15,
+        "max_tries": 15,
+        "amount_of_ideas_multiplier": 3
+        }
+}
