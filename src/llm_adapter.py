@@ -1,4 +1,5 @@
 import os
+from turtle import done
 import google.genai as genai
 from dotenv import load_dotenv
 from networkx import config
@@ -40,15 +41,29 @@ class PlateFinder:
         )
         
         model_config = types.GenerateContentConfig(
-                        max_output_tokens=amount_of_ideas * 10,  
+                        max_output_tokens=amount_of_ideas * 30,  
                         temperature=0.8,
                     )
         start_time = time.perf_counter()
-        response = self.client.models.generate_content(
-            model = self.model_name,
-            contents=full_prompt, 
-            config=model_config
-        )
+
+        done = False
+        while done == False:
+            try:
+                response = self.client.models.generate_content(
+                    model = self.model_name,
+                    contents=full_prompt, 
+                    config=model_config
+                )
+                done = True
+
+            except Exception as e:
+                if e.code == 504:
+                    print("Request timed out. Retrying...")
+                else:
+                    print(f"An error occurred: {e}")
+                    raise e
+
+
         end_time = time.perf_counter()
         execution_time = end_time - start_time
         print(f"The code took {execution_time:.4f} seconds to run. Response: {response.text} \n Prompt was: {full_prompt}")

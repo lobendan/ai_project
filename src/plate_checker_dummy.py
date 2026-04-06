@@ -29,7 +29,7 @@ class PlateGetter:
             if len(plate) < self.min_len or len(plate) > self.max_len:
                 continue  # Skip plates that don't meet length requirements
 
-            if random.random() < 0.3:  # Simulate 30% availability
+            if random.random() < 0.9:  # Simulate 90% availability
                 available.append(plate)
             else:
                 not_available.append(plate)
