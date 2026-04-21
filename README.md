@@ -37,14 +37,12 @@ GEMINI_API_KEY=your_api_key_here
 
 ### Starting the backend
 
-
-
-
-from `src/`:
 ```bash
+cd src
 uvicorn api:app --reload
 ```
-An overall UI can be accessed in the browser using this URL: http://127.0.0.1:8000/docs
+An overall UI can be accessed in the browser using this URL: http://127.0.0.1:8000/docs.
+An example Rest API Call can be run, with a custom vanity plate prompt. This can be accessed by POST /find-plates>Try it out>Edit value: adjust the value of the "description" key and then click "Execute". After a few seconds the response body, with the vanity plate ideas can be seen below. 
 
 #### Demo UI
 
