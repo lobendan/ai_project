@@ -3,7 +3,6 @@ import os
 import time
 import random
 
-from matplotlib.style import available
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
 
