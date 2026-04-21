@@ -36,7 +36,7 @@ class PlateGetter:
         return available, not_available
 
 
-    # This function used a webscraper, to get actual availability data
+    # This function used a webscraper (from a previous project of mine), to get actual availability data
     # Approach is too slow for demo purposes
     # def check_plate_availability(self, plates):
     #     available = []

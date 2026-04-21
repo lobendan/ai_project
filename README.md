@@ -119,7 +119,7 @@ Responsibilities:
 - Provides the dummy availability-checking interface used by `PlateFinder`.
 - Contains two implementations:
   - `check_dummy_availability(...)`: simulated checker, currently the active path.
-  - `check_plate_availability(...)`: DB-assisted path for real or background updates; this is not active right now, see the code comments.
+  - `check_plate_availability(...)`: DB-assisted path for real or background updates; this is not active right now, see the code comments. (This part is intended to use a previous project of mine, the commented code is from that project as well.)
 
 Current runtime path:
 
