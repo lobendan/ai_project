@@ -1,16 +1,15 @@
-import sys
 import os
-import time
 import random
 
 project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
 
 # Add the database folder to sys.path
-sys.path.append(project_root)
+# sys.path.append(project_root)
 # from plate_bot.src.database.sqliteDB import SQLiteDB
 
 class PlateGetter:
+    "Class responsible for checking the availability of vanity plates, or at least simulating that process."
     def __init__(self, state, max_age_minutes = 60, min_len=1, max_len=7):
         # self.db = SQLiteDB("plate_bot/src/database/plates.db")
         self.state = state
@@ -20,6 +19,16 @@ class PlateGetter:
 
 
     def check_dummy_availability(self, plates):
+        """ Simulates the availability checking functionality, that is supposed to be based on information of the respective DMV. 
+        It currently uses a stochastic approach and marks 90% of vanity plates as available, to speed up the process for demo purposes.
+
+        Args: 
+            plates (list): A list of license plates to check.
+
+        Returns: 
+            available (list): A list of the available vanity plates from that batch
+            unavailable (list): A list of the unavailable vanity plates from that batch
+        """
         available = []
         not_available = []
 
