@@ -8,7 +8,7 @@ This project generates vanity plate ideas with an LLM, checks which ones are ava
 
 ### 1. Create and activate a virtual environment
 
-Install and use Python 3.14.2 or above.
+Install and use Python 3.14.2 or above. (Might also work with lower version, but it was developed and tested with Python 3.14.2.)
 
 From the project root:
 
