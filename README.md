@@ -14,7 +14,7 @@ From the project root:
 
 ```bash
 python -m venv .venv
-.venv\Scripts\Activate.ps1
+.venv\Scripts\activate.bat
 ```
 
 ### 2. Install Python dependencies
